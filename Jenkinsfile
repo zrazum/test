@@ -9,12 +9,6 @@ pipeline {
       }
     }
 
-    stage('now new stage') {
-      steps {
-        echo 'now new staging...'
-      }
-    }
-
     stage('manual stage') {
       steps {
         echo 'now manual'
