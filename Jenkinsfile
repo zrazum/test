@@ -15,5 +15,11 @@ pipeline {
       }
     }
 
+    stage('manual stage') {
+      steps {
+        echo 'now manual'
+      }
+    }
+
   }
 }
