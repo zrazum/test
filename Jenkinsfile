@@ -9,5 +9,11 @@ pipeline {
       }
     }
 
+    stage('now new stage') {
+      steps {
+        echo 'now new staging...'
+      }
+    }
+
   }
 }
