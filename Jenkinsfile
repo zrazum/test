@@ -15,5 +15,11 @@ pipeline {
       }
     }
 
+    stage('shell') {
+      steps {
+        sh 'test.sh'
+      }
+    }
+
   }
 }
