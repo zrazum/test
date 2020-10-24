@@ -16,8 +16,19 @@ pipeline {
     }
 
     stage('shell') {
-      steps {
-        sh 'sh ./test.sh'
+      parallel {
+        stage('shell') {
+          steps {
+            sh 'sh ./test.sh'
+          }
+        }
+
+        stage('para') {
+          steps {
+            sh 'echo \'paralleling\''
+          }
+        }
+
       }
     }
 
