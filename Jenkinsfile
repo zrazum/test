@@ -15,9 +15,9 @@ pipeline {
       }
     }
 
-    stage('manual stage') {
+    stage('confirm') {
       steps {
-        echo 'now manual'
+        input(message: 'sup', ok: 'yayaya', id: 'yo', submitter: 'me', submitterParameter: 'meme')
       }
     }
 
