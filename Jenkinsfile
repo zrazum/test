@@ -1,24 +1,24 @@
 pipeline {
   agent any
+  environment {
+    TEST_GLOBAL_VAR = 'testing global var'
+  }
+
   stages {
-    stage('another test') {
-      steps {
-        echo 'testing...'
-        echo 'testinggg'
-        echo 'another testing,,,'
-      }
+    stage ('test vars')
+    environment {
+      TEST_LOCAL_VAR = 'testing local var'
     }
-
-    stage('now new stage') {
-      steps {
-        echo 'now new staging...'
-      }
-    }
-
-    stage('confirm') {
-      steps {
-        input(message: 'sup', ok: 'yayaya', id: 'yo', submitter: 'me', submitterParameter: 'meme')
-      }
+    steps {
+      echo 'single global quotes:'
+      echo '${TEST_GLOBAL_VAR}'
+      echo "double global quotes:"
+      echo "${TEST_GLOBAL_VAR}"
+      
+      echo 'single local quotes:'
+      echo '${TEST_LOCAL_VAR}'
+      echo "double local quotes:"
+      echo "${TEST_LOCAL_VAR}"
     }
 
   }
