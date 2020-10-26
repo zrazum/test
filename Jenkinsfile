@@ -20,6 +20,11 @@ pipeline {
       echo "double local quotes:"
       echo "${TEST_LOCAL_VAR}"
     }
+    
+    stage ('test global lib')
+    steps {
+      testLib()
+    }
 
   }
   post {
