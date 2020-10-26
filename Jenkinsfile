@@ -1,4 +1,4 @@
-@Library('libTest') _
+@Library('lib') _
 pipeline {
   agent any
   environment {
