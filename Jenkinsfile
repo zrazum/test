@@ -25,7 +25,7 @@ pipeline {
     
     stage ('test global lib') {
       steps {
-        testLib()
+        libTest()
       }
     }
 
